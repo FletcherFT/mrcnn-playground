@@ -27,6 +27,8 @@ from mrcnn.config import Config
 from mrcnn.model import log
 
 MODEL_DIR = os.path.join("./logs")
+if not os.path.exists(MODEL_DIR):
+    os.mkdir(MODEL_DIR)
 COCO_MODEL_PATH = os.path.join("./mask_rcnn_coco.h5")
 if not os.path.exists(COCO_MODEL_PATH):
     utils.download_trained_weights(COCO_MODEL_PATH)
